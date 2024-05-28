@@ -80,8 +80,8 @@ public class ViewTask extends AppCompatActivity implements OnRadioButtonClickLis
         tv_task_description.setText(desc);
         requestQueue = Volley.newRequestQueue(this);
 
-//        getQuizData("http://10.0.2.2:5000/getQuiz?topic=" + encodeString(title));
-        mockData();
+        getQuizData("http://10.0.2.2:5000/getQuiz?topic=" + encodeString(title));
+
         convertedList = getConvertedList();
         QuestionAdapter questionAdapter = new QuestionAdapter(convertedList, this);
         recyclerViewQuestions.setLayoutManager(new LinearLayoutManager(this));
@@ -231,36 +231,6 @@ public class ViewTask extends AppCompatActivity implements OnRadioButtonClickLis
             return null;
         }
     }
-
-    private void mockData() {
-        // Fourth question on Data Structures
-        List<String> options1DS = new ArrayList<>();
-        options1DS.add("A linked list is a linear data structure.");
-        options1DS.add("A linked list consists of a sequence of nodes, where each node contains data and a reference to the next node in the sequence.");
-        options1DS.add("In a singly linked list, each node has a reference only to the next node in the sequence.");
-        options1DS.add("In a doubly linked list, each node has references to both the next and previous nodes in the sequence.");
-        questionsAndOptions.put("What is a linked list?", options1DS);
-        questionsAndCorrectAnswers.put("What is a linked list?", "A linked list consists of a sequence of nodes, where each node contains data and a reference to the next node in the sequence.");
-
-        // Fifth question on Data Structures
-        List<String> options2DS = new ArrayList<>();
-        options2DS.add("A stack is a data structure that follows the Last In, First Out (LIFO) principle.");
-        options2DS.add("A stack supports two main operations: push (to add an element) and pop (to remove the top element).");
-        options2DS.add("In a stack, elements are added and removed from the same end, known as the top of the stack.");
-        options2DS.add("Stacks are commonly used in recursive algorithms and expression evaluation.");
-        questionsAndOptions.put("What is a stack?", options2DS);
-        questionsAndCorrectAnswers.put("What is a stack?", "A stack is a data structure that follows the Last In, First Out (LIFO) principle.");
-
-        // Sixth question on Algorithms
-        List<String> options1Algo = new ArrayList<>();
-        options1Algo.add("An algorithm is a step-by-step procedure or set of rules for solving a problem.");
-        options1Algo.add("Algorithms can be expressed in natural language, pseudocode, or programming language.");
-        options1Algo.add("Algorithm complexity analysis measures the performance of an algorithm in terms of time and space.");
-        options1Algo.add("Common algorithm design techniques include greedy algorithms, dynamic programming, and divide and conquer.");
-        questionsAndOptions.put("What is an algorithm?", options1Algo);
-        questionsAndCorrectAnswers.put("What is an algorithm?", "An algorithm is a step-by-step procedure or set of rules for solving a problem.");
-    }
-
 
     public void getQuizData(String url) {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
