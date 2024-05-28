@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/layoutUserInfo"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textViewGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:layout_marginStart="30dp"
+            android:text="Hello, Your Name"
+            android:textSize="18sp"/>
+
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/profile"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/layoutNotification"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_below="@id/layoutUserInfo"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="7dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:src="@drawable/notification"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"
+                android:layout_height="16dp"/>
+
+            <TextView
+                android:id="@+id/textViewNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:text="You have 1 task due"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewItems"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutNotification"
+        android:padding="16dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewSetupHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's get you setup!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr_image"
+        android:layout_below="@id/textViewSetupHeading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp">
+
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile" />
+
+        <ImageView
+            android:id="@+id/imageViewAdd"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:padding="1dp"
+            android:background="@drawable/white_circle"
+            android:src="@drawable/plus"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fr_image"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Username"
+        android:padding="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextUsername"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Email"
+        android:padding="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextConfirmEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextEmail"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Confirm Email"
+        android:padding="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextConfirmEmail"
+        android:layout_marginTop="16dp"
+        android:hint="Password"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:padding="8dp"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Confirm Password"
+        android:padding="8dp"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/editTextPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextConfirmPassword"
+        android:layout_marginTop="16dp"
+        android:hint="Phone Number"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:padding="8dp"
+        android:inputType="phone"/>
+
+    <Button
+        android:id="@+id/buttonCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPhoneNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Create Account"/>
+
+</RelativeLayout>
